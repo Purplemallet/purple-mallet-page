@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purple Mallet | Brand Pages</title>
+  <meta name="description" content="Purple Mallet has grown and now has dedicated brand pages." />
+  <style>
+    :root {
+      --bg: #f6f3fb;
+      --card: rgba(255, 255, 255, 0.88);
+      --text: #241833;
+      --muted: #66577a;
+      --primary: #6f3cc3;
+      --primary-dark: #552d97;
+      --border: rgba(111, 60, 195, 0.14);
+      --shadow: 0 20px 50px rgba(58, 28, 108, 0.14);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(132, 94, 247, 0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(199, 164, 255, 0.22), transparent 28%),
+        linear-gradient(180deg, #faf8ff 0%, var(--bg) 100%);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(111, 60, 195, 0.96), rgba(146, 93, 226, 0.92));
+      color: #fff;
+      border-radius: 28px;
+      padding: 52px 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 220px;
+      height: 220px;
+      top: -90px;
+      right: -60px;
+    }
+
+    .hero::after {
+      width: 140px;
+      height: 140px;
+      bottom: -50px;
+      left: -30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      backdrop-filter: blur(4px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+    }
+
+    .intro {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .intro p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro strong {
+      color: var(--text);
+    }
+
+    .intro a {
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .intro a:hover {
+      text-decoration: underline;
+    }
+
+    .links-card {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-text {
+      margin: 0 0 22px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid rgba(111, 60, 195, 0.12);
+      border-radius: 18px;
+      padding: 18px 18px;
+      font-weight: 700;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      min-height: 68px;
+    }
+
+    .brand-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(111, 60, 195, 0.35);
+      box-shadow: 0 16px 28px rgba(76, 39, 133, 0.12);
+    }
+
+    .brand-link span:last-child {
+      font-size: 1.15rem;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 20px;
+      padding: 0 8px;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 20px, 960px);
+        padding-top: 20px;
+        padding-bottom: 36px;
+      }
+
+      .hero,
+      .intro,
+      .links-card {
+        border-radius: 20px;
+      }
+
+      .hero {
+        padding: 36px 20px;
+      }
+
+      .intro,
+      .links-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Purple Mallet Update</div>
+      <h1>Purple Mallet has grown and now has dedicated brand pages</h1>
+    </section>
+
+    <section class="intro">
+      <p>
+        The overarching company <strong>Purple Mallet</strong> has now split to focus on its individual brands,
+        including the flagship brand <strong>Friendly Razor</strong>.
+      </p>
+      <p>
+        All your previous codes will still work. If you have any questions or experience any issues,
+        please contact us at <a href="mailto:info@purplemallet.co.uk">info@purplemallet.co.uk</a>.
+      </p>
+    </section>
+
+    <section class="links-card">
+      <h2 class="section-title">Visit the new brand pages</h2>
+      <p class="section-text">
+        Select a brand below to go to its dedicated page.
+      </p>
+
+      <div class="button-grid">
+        <a class="brand-link" href="https://www.FriendlyRazor.co.uk" target="_blank" rel="noopener noreferrer">
+          <span>Friendly Razor</span>
+          <span>→</span>
+        </a>
+
+        <a class="brand-link" href="https://www.FriendlyHealth.co.uk" target="_blank" rel="noopener noreferrer">
+          <span>Friendly Health</span>
+          <span>→</span>
+        </a>
+
+        <a class="brand-link" href="https://www.amazon.co.uk/stores/page/6D3F7E3A-F52E-4962-8088-71F30D47C002?ingress=3" target="_blank" rel="noopener noreferrer">
+          <span>Whizzovate</span>
+          <span>→</span>
+        </a>
+
+        <a class="brand-link" href="https://www.amazon.co.uk/stores/Friendly-Books/author/B0BKT9GB2W?ref=ap_rdr&amp;shoppingPortalEnabled=true" target="_blank" rel="noopener noreferrer">
+          <span>Friendly Books</span>
+          <span>→</span>
+        </a>
+
+        <a class="brand-link" href="https://www.amazon.co.uk/stores/page/00CC059F-CE54-4EF3-8616-7546F7ED8816?ingress=3" target="_blank" rel="noopener noreferrer">
+          <span>Glow Bushcraft</span>
+          <span>→</span>
+        </a>
+
+        <a class="brand-link" href="https://www.amazon.co.uk/stores/page/44001156-D838-4A50-9F1E-A94B59D77F13?ingress=3" target="_blank" rel="noopener noreferrer">
+          <span>Friendly Scratchcards</span>
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="footer">© Purple Mallet</p>
+  </main>
+</body>
+</html>
